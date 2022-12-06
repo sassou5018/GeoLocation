@@ -4,7 +4,7 @@ using GeoLocation.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<GeoLocationContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("GeoLocationContext") ?? throw new InvalidOperationException("Connection string 'GeoLocationContext' not found.")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("GeoLocationContext") ?? throw new InvalidOperationException("Connection string 'GeoLocationContext' not found.")));
 
 // Add services to the container.
 
